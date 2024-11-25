@@ -79,6 +79,7 @@ Start the Django development server.
 ```
 
 Access the project by navigating to `http://127.0.0.1:8000` in your web browser.
+Access the Api Root by navigating to `http://localhost:8000/api/tasks/` in your web browser.
 
 Project Structure
 -----------------

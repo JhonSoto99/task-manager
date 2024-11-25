@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
-from tasks.viewsets import TaskViewSet
+from tasks.api.viewsets import TaskViewSet
 
 from .views import TaskCreateView, TaskDeleteView, TaskListView, TaskUpdateView
 

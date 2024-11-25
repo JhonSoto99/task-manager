@@ -25,6 +25,6 @@ class TaskViewSetTests(TestCase):
         self.client = APIClient()
 
     def test_list_should_return_200(self):
-        url = reverse("task-list")
+        url = reverse("api:tasks-list")
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-oep*j5x0da0j*_$ozil@7umq^*pr2agr^j0=+ww2+2k6&)yrrx"
+SECRET_KEY = (
+    "django-insecure-oep*j5x0da0j*_$ozil@7umq^*pr2agr^j0=+ww2+2k6&)yrrx"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "tasks"
+    "crispy_forms",
+    "crispy_tailwind",
+    "tasks",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -55,7 +61,7 @@ ROOT_URLCONF = "task_manager.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -122,3 +128,25 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
+
+LOGIN_REDIRECT_URL = "list_task"
+
+LOGOUT_REDIRECT_URL = "login"
+
+LOGIN_URL = "login"
+
+# Email
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# dev
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = "smtp.example.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "your-email@example.com"
+EMAIL_HOST_PASSWORD = "your-password"
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"

@@ -78,8 +78,12 @@ Start the Django development server.
 ./manage.py runserver
 ```
 
-Access the project by navigating to `http://127.0.0.1:8000` in your web browser.
-Access the Api Root by navigating to `http://localhost:8000/api/tasks/` in your web browser.
+- Access the project by navigating to http://127.0.0.1:8000 in your web browser.
+- Access the Api Root by navigating to http://localhost:8000/api/tasks/ in your web browser.
+
+## View the API Documentation:
+- Swagger UI: http://127.0.0.1:8000/api/docs/
+- Redoc: http://127.0.0.1:8000/api/redoc/
 
 Project Structure
 -----------------

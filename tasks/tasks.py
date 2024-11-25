@@ -3,7 +3,9 @@ from django.core.mail import send_mail
 
 
 @shared_task
-def send_notification_email(subject, message, recipient_email):
+def send_notification_email(
+    subject: str, message: str, recipient_email: str
+) -> None:
     """
     Sends an asynchronous email notification.
 

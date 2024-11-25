@@ -3,7 +3,7 @@
     <h1 class="text-3xl font-bold my-3">
         To-do List
         <a class="inline-block rounded bg-slate-900 px-8 py-3 mt-6 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
-           href="{% url "add_task" %}">
+           href="{% url "web:add_task_web" %}">
             Add task
         </a>
     </h1>
@@ -17,10 +17,10 @@
                     <p class="font-normal text-gray-700 dark:text-gray-400">{{ task.expiration_date|date:"Y-m-d H:i" }}</p>
 
                     <div class="grid grid-cols-2 gap-4 mt-4">
-                        <a href="{% url 'edit_task' task.pk %}" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-semibold">
+                        <a href="{% url 'web:edit_task_web' task.pk %}" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-semibold">
                             Edit
                         </a>
-                        <a href="{% url 'delete_task' task.pk %}" class="inline-block mt-4 text-red-600 hover:text-red-700 font-semibold">
+                        <a href="{% url 'web:delete_task_web' task.pk %}" class="inline-block mt-4 text-red-600 hover:text-red-700 font-semibold">
                             Delete
                         </a>
                     </div>

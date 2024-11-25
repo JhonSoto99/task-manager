@@ -86,9 +86,7 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    "default": env.db("DJANGO_DB_URL")
-}
+DATABASES = {"default": env.db("DJANGO_DB_URL")}
 
 
 # Password validation
@@ -136,7 +134,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
 
-LOGIN_REDIRECT_URL = "list_task"
+LOGIN_REDIRECT_URL = "web:list_task_web"
 
 LOGOUT_REDIRECT_URL = "login"
 

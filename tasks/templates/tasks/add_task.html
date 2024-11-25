@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load tailwind_filters %}
 {% block content %}
-<form action="{% url "add_task" %}" method="post">
+<form action="{% url "web:add_task_web" %}" method="post">
     {% csrf_token %}
     {{ form|crispy }}
     <button

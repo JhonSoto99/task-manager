@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load tailwind_filters %}
+{% block content %}
+<form action="{% url "add_task" %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button
+            class="inline-block rounded bg-slate-900 px-8 py-3 mt-6 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+            type="submit">
+        Add +
+    </button>
+</form>
+{% endblock %}

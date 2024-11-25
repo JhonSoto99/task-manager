@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="text-3xl font-bold underline my-4">
+        Delete Task
+    </h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        <button class="inline-block rounded bg-red-900 px-8 py-3 mt-6 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+              type="submit">Delete</button>
+    </form>
+{% endblock %}
